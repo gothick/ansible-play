@@ -1,0 +1,12 @@
+---
+- hosts: localhost
+  connection: local
+  gather_facts: no
+
+  vars_files:
+    - vars/api_key.yml
+
+  tasks:
+
+    - name: Show the result.
+      debug: var=myapp_api_key
