@@ -5,6 +5,7 @@
 
   vars_files:
     - vars/api_key.yml
+    - vars/discord.yml
 
   tasks:
     - name: Echo the API key which was injected into the env.
@@ -15,3 +16,12 @@
 
     - name: Show the result.
       debug: var=echo_result.stdout
+
+  post_tasks:
+    - name: Some dopey thing
+      connection: local
+      community.general.discord:
+        webhook_id: "{{ discord_webhook_id }}"
+        webhook_token: "{{ discord_webhook_token }}"
+        content: "This is a message from Ansible"
+        username: Ansible
