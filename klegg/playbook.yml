@@ -1,12 +1,19 @@
 ---
-- name: Install useful tools
+- name: Bootstrap Klegg
   hosts: all
   become: true
+
+  vars:
+    vagrant_version: "2.4.1"
 
   pre_tasks:
 
   roles:
     - basics
     - useful_tools
+    - virtualbox
+    - geerlingguy.pip
+    - vagrant
+    - ansible
 
   tasks:
