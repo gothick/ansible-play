@@ -1,0 +1,12 @@
+---
+- name: Install useful tools
+  hosts: all
+  become: true
+
+  pre_tasks:
+
+  roles:
+    - basics
+    - useful_tools
+
+  tasks:
