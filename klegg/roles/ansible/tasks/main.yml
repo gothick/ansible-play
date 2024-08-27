@@ -7,3 +7,4 @@
     cache_valid_time: 3600
     name:
       - ansible
+      - cowsay # Because who *doesn't* want a talking cow?
